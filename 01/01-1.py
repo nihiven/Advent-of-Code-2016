@@ -40,17 +40,17 @@ with open(inputFile) as f:
 # parse input
 cmdList = []
 for cmd in cmdInput:
-	cmdList.append(	[cmd.strip()[0],	# first character
-									cmd.strip()[1:]])	# everything except first character
+	cmdList.append( [cmd.strip()[0],  # first character
+                  cmd.strip()[1:]]) # everything except first character
 
 # process instructions
 for step in cmdList:
 	turn = turnTrans[step[0]]
 	distance = step[1]
 	# take a walk
-	direction = orientation[direction][turn] 								# turn
-	x = int(x) + int(compass[direction][0]) * int(distance)	# x
-	y = int(y) + int(compass[direction][1]) * int(distance)	# y
+	direction = orientation[direction][turn]                # turn
+	x = int(x) + int(compass[direction][0]) * int(distance) # x
+	y = int(y) + int(compass[direction][1]) * int(distance) # y
 
 # taxiiii!
 print 'distance:', abs(startX - x) + abs(startY - y)
