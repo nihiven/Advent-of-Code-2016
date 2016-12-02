@@ -44,7 +44,6 @@ for cmd in cmdInput:
 									cmd.strip()[1:]])	# everything except first character
 
 # process instructions
-vistedList = [{x,y}]
 for step in cmdList:
 	turn = turnTrans[step[0]]
 	distance = step[1]
